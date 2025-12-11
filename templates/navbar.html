@@ -1,0 +1,16 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+<a href="/">Front Page</a>
+
+{% if session['userID'] %}
+<a href="/userlinkspage">Link</a>
+{% endif %}
+
+<a href="/loginpage">Login</a>
+
+<a href="/signuppage">Sign Up</a>
+
+{% if session['userID'] %}
+<a href="/logout">Log Out</a>
+{% endif %}
+
+  </nav>

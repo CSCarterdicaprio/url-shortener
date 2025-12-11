@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %} URL SHORTENER {% endblock %}
+
+{% block body %}
+<h1>Welcome to your URLs</h1>
+
+<table>
+  <thead>
+    <tr>
+        <th>LongURL</th>
+        <th>ShortURL</th>
+        <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for (long, short, id) in links %}
+    <tr>
+        <td>{{long}}</td>
+        <td>http://127.0.0.1:5000/{{short}}</td>
+        <td>
+            <a href="{{ url_for('deleteURL',urlID=id) }}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<h1>Make a new shortened url</h1>
+<form action="{{url_for('makeshortURL')}}">
+    <label for ="url">URL</label><br>
+    <input type="text" name="url"><br>
+    <input type="submit" value="Submit">
+</form>
+
+
+{% endblock %}

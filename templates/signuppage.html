@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %} URL SHORTENER {% endblock %}
+
+{% block body %}
+<h1>Sign up to shorten url</h1>
+<h2>If the account already exists, the sign up page will re-display.</h2>
+
+<form action="{{url_for('signUp')}}">
+    <label for ="username">Username</label><br>
+    <input type="text" name="username"><br>
+    <label for ="password">Password</label><br>
+    <input type="text" name="password"><br>
+    <input type="submit" value="Submit">
+</form>
+
+
+{% endblock %}
